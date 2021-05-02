@@ -1,0 +1,56 @@
+{
+  "exps": [
+    {
+      "kind": "OpExp",
+      "op": {
+        "kind": "SymbolLit",
+        "value": "if"
+      },
+      "args": [
+        {
+          "kind": "OpExp",
+          "op": {
+            "kind": "SymbolLit",
+            "value": "="
+          },
+          "args": [
+            {
+              "kind": "IntLit",
+              "value": 1
+            },
+            {
+              "kind": "IntLit",
+              "value": 2
+            }
+          ]
+        },
+        {
+          "kind": "OpExp",
+          "op": {
+            "kind": "SymbolLit",
+            "value": "print"
+          },
+          "args": [
+            {
+              "kind": "StringLit",
+              "value": "aaa"
+            }
+          ]
+        },
+        {
+          "kind": "OpExp",
+          "op": {
+            "kind": "SymbolLit",
+            "value": "print"
+          },
+          "args": [
+            {
+              "kind": "StringLit",
+              "value": "bbb"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
