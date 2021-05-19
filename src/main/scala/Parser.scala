@@ -2,8 +2,6 @@ import java.nio.file.Path
 import scala.util.parsing.combinator.{PackratParsers, RegexParsers}
 import scala.util.parsing.input.{CharSequenceReader, Reader}
 
-case class SyntaxError(location: Location, msg: String) extends Throwable
-
 case class Location(line: Int, column: Int) {
   override def toString = s"line: $line, column: $column"
 }
@@ -17,8 +15,6 @@ object Parser extends RegexParsers with PackratParsers {
     val reader = new PackratReader(new CharSequenceReader(code))
     phrase(mexps)(reader) match {
       case NoSuccess(msg, next) => {
-        println(next.pos)
-        println(msg)
         throw SyntaxError(Location(next.pos.line, next.pos.column), msg)
       }
       case Success(result, next) => new AST(result.toVector)

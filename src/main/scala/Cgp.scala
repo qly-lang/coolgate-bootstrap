@@ -16,7 +16,16 @@ object Cgp extends App {
   } else {
     source + ".cbor"
   }
-  val parsed = Parser(sourcePath)
+  val parsed = try {
+    Parser(sourcePath)
+  } catch {
+    case e: SyntaxError =>
+      System.err.println(e.toString)
+      System.exit(1)
+    case e =>
+      System.err.println("Unexpected error: " + e.toString)
+      System.exit(1)
+  }
   val targetFile = new FileOutputStream(target)
-  targetFile.write(EncodeAST(parsed))
+  targetFile.write(EncodeAST(parsed.asInstanceOf[AST]))
 }

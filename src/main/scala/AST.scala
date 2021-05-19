@@ -3,7 +3,7 @@ import io.bullet.borer.derivation.MapBasedCodecs._
 import io.bullet.borer.{Codec, AdtEncodingStrategy}
 import io.bullet.borer.Cbor
 
-case class AST(val exps: Vector[MExp])
+case class AST(val mexps: Vector[MExp])
 
 sealed trait MExp extends Positional
 
