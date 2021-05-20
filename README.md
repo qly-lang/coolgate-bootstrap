@@ -13,7 +13,7 @@ sbt assmbly
 
 ## Run
 ```shell
-scripts/cbp file.cg
+scripts/cgb file.cg
 ```
 It will generate `file.cbor` at same location of `file.cg`. You can use `scripts/cbor2json.py` to convert
 binary cbor file to human readable json.

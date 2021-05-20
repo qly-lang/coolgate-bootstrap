@@ -1,4 +1,4 @@
 #!/bin/bash
 source_path=$(dirname ${BASH_SOURCE[0]})
 version=$(awk '/version := "/{print $NF}' ${source_path}/../build.sbt | sed 's/\"//g')
-java -jar ${source_path}/../target/scala-2.13/coolgate-bootstrap-parser-assembly-${version}.jar $@
+java -jar ${source_path}/../target/scala-2.13/coolgate-bootstrap-assembly-${version}.jar $@

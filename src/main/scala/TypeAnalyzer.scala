@@ -59,7 +59,7 @@ class TypeAnalyzer(val ast: AST) {
 
   def analyzeTypeMExpIn(mexp: MExp, scope: Scope) = {
     mexp match {
-      case OpExp(SymbolLit("f"), Vector(fname: SymbolLit, signature) :+: mexps) => {
+      case OpExp(SymbolLit("f"), (fname: SymbolLit) +: signature +: mexps) => {
         val newScope = new Scope(Some(scope))
         scopes(mexp) = newScope
         signature match {
